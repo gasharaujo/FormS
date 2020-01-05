@@ -85,7 +85,7 @@
 				<div class="sty-display-left sty-padding sty-col l6 m8" style="max-width:40%; max-height:100% background: rgb(255,165,0); background: linear-gradient(180deg, rgba(255,165,0,1) 0%, rgba(204,81,81,1) 100%);">
 					<div class="sty-container sty-white sty-border" style="border-radius: 25px; max-width:100%; max-height:">
 						<div class="sty-container sty-white sty-justify sty-center">
-							<h2><i class="fa fa-bed sty-margin-right"></i>Registro</h2>
+							<h2><i class="fa fa-bed sty-margin-right"></i>LISTA</h2>
 						</div>
 						
 						<!-- carrocel -->
@@ -105,6 +105,20 @@
 									else {
 										echo '<div class="sty-display-container mySlides">';
 									}
+				
+									$UFc = $conexao->prepare("SELECT * FROM `estados` WHERE `id` = ".$regs['UF']);
+									$UFc->execute();
+									$fetchAll = $UFc->fetchAll();
+									foreach($fetchAll as $UFs){
+										$UF = $UFs['nome'];
+									}
+									$CIDc = $conexao->prepare("SELECT * FROM `cidades` WHERE `id` = ".$regs['UF']);
+									$CIDc->execute();
+									$fetchAll = $CIDc->fetchAll();
+									foreach($fetchAll as $CIDs){
+										$CID = $CIDs['nome'];
+									}
+									
 									echo '
 											<p><label>CPF: '.$regs['CPF'].'<label></p>
 											<p><label>NOME: '.$regs['NOME'].'<label></p>
@@ -112,8 +126,8 @@
 											<p><label>EMAIL: '.$regs['EMAIL'].'<label></p>
 											<p><label>IDADE: '.$regs['DT_NASC'].'<label></p>
 											<p><label>ENDEREÇO: '.$regs['ENDERECO'].'<label></p>
-											<p><label>CIDADE: '.$regs['CIDADE'].'<label></p>
-											<p><label>ESTADO: '.$regs['UF'].'<label></p>
+											<p><label>CIDADE: '.$CID.'<label></p>
+											<p><label>ESTADO: '.$UF.'<label></p>
 										</div>
 									';
 									$counter = $counter + 1; 
