@@ -4,7 +4,7 @@
 		<title> Formulario </title>
 		<meta charset="UTF-8">
 		<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1" />
-		<link rel="stylesheet" href="css/css_geral">
+		<link rel="stylesheet" href="css/css_geral.css">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 		<script src="js/jquary.js" type="text/javascript"></script>
