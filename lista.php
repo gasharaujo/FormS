@@ -76,8 +76,16 @@
 									}
 								?>
 							</div>
-							<button class="btn btn-dark BtLeft" onclick="plusDivs(-1)">&#10094;</button>
-							<button class="btn btn-dark BtRight" onclick="plusDivs(1)">&#10095;</button>
+							<a class="btn btn-dark BtLeft" onclick="plusDivs(-1)" role="button" data-slide="prev">
+								<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+								<span class="sr-only">Previous</span>
+							</a>
+							<a class="btn btn-dark BtRight" onclick="plusDivs(-1)" role="button" data-slide="prev">
+								<span class="carousel-control-next-icon" aria-hidden="true"></span>
+								<span class="sr-only">Next</span>
+							</a>
+							<!-- button class="btn btn-dark BtLeft" onclick="plusDivs(-1)">&#10094;</button>
+							<button class="btn btn-dark BtRight" onclick="plusDivs(1)">&#10095;</button-->
 						</div>
 			</form>
 		<?php include 'footer.php'; ?>
